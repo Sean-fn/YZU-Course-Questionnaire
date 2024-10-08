@@ -8,4 +8,9 @@ filteredRadios.forEach(box => box.checked = true);
 let filteredCheckboxes = tmpCheckbox.filter(box => box.type === "checkbox").slice(0, 4);
 filteredCheckboxes.forEach(box => box.checked = true);
 
-document.querySelectorAll("input[type=submit]")[0].click();
+let submitButton = document.querySelector("input[type=submit][name=btSubmit]");
+if (submitButton) {
+    submitButton.click();
+} else {
+    console.log("Submit button not found");
+}
